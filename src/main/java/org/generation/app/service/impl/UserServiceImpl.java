@@ -3,8 +3,11 @@ package org.generation.app.service.impl;
 import java.util.List;
 import java.util.Optional;
 
+import org.generation.app.entity.Privilege;
 import org.generation.app.entity.User;
+import org.generation.app.repository.PrivilegeRepository;
 import org.generation.app.repository.UserRepository;
+import org.generation.app.service.PrivilegeService;
 import org.generation.app.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +17,11 @@ public class UserServiceImpl implements UserService {
 	
 	@Autowired
 	UserRepository userRepository;
+	@Autowired
+	PrivilegeRepository privilegeRepository;
+	@Autowired
+	PrivilegeService privilegeService;
+	
 
 	@Override
 	public User getUserById(Long id) {
@@ -32,8 +40,14 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public User createUser(User user) {
+		Optional<Privilege> existingPrivilege = privilegeRepository.findByPrivilege("user");
+		if( existingPrivilege.isPresent()) user.setPrivilege(existingPrivilege.get());
+		else {
+			Privilege userPrivilege = privilegeService.createPrivilege(new Privilege("user"));
+			user.setPrivilege(userPrivilege);
+			}
 		user.setId(null);
-		user.setActive(true);
+		
 		// TODO Verificar que no exista el email.
 		User newUser = userRepository.save( user );
 		return newUser;
@@ -41,7 +55,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<User> getAllUsers() {
-		List<User> users = (List<User>) userRepository.findAllByActive(true);
+		List<User> users = (List<User>) userRepository.findAllByPrivilege(new Privilege((long) 1, "users"));
 		return users;
 	}
 
@@ -50,7 +64,11 @@ public class UserServiceImpl implements UserService {
 		User existingUser = getUserById(id);
 		existingUser.setFirstName( user.getFirstName());
 		existingUser.setLastName( user.getLastName());
-		existingUser.setBirthdate( user.getBirthdate());
+		existingUser.setAddress(user.getAddress());
+		existingUser.setPassword(user.getPassword());
+		existingUser.setPhone(user.getPhone());
+		existingUser.setPrivilege(user.getPrivilege());
+		
 		// Si modificamos el email, se debe verificar que no exista.
 		return userRepository.save(existingUser);
 	}
@@ -59,7 +77,7 @@ public class UserServiceImpl implements UserService {
 	public void deleteUser(Long id) {
 		User existingUser = getUserById(id);
 		// userRepository.delete(existingUser);
-		existingUser.setActive(false);
+		existingUser.setPrivilege(new Privilege((long) 3, "inactive"));
 		userRepository.save(existingUser);
 	}
 

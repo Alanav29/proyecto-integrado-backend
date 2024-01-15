@@ -1,5 +1,8 @@
 package org.generation.app.repository;
 
+
+
+
 import java.util.Optional;
 
 import org.generation.app.entity.Privilege;
@@ -39,8 +42,7 @@ import org.springframework.data.repository.CrudRepository;
  *  CrudRepository puede ser suficiente.
  */
 
-public interface UserRepository extends CrudRepository<User, Long>{
-      
-	 Optional<User> findByEmail(String email);
-	 Iterable<User> findAllByPrivilege(Privilege privilege);
+public interface PrivilegeRepository extends CrudRepository<Privilege, Long>{
+	Optional<Privilege> findById(Long id);
+	Optional<Privilege> findByPrivilege(String privilege);
 }

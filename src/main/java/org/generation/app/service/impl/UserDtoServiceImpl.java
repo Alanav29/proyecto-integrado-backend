@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.generation.app.dto.UserDto;
+import org.generation.app.entity.Privilege;
 import org.generation.app.entity.User;
 import org.generation.app.service.UserDtoService;
 import org.generation.app.service.UserService;
@@ -60,8 +61,8 @@ public class UserDtoServiceImpl implements UserDtoService {
 		userDto.setId( user.getId() );
 		userDto.setFirstName(  user.getFirstName() );
 		userDto.setLastName(  user.getLastName() );
-		userDto.setBirthdate(  user.getBirthdate() );
 		userDto.setEmail( user.getEmail() );
+		userDto.setPrivilege(user.getPrivilege());
 		return userDto;
 	}
 

@@ -1,6 +1,6 @@
 package org.generation.app.dto;
 
-import java.sql.Timestamp;
+import org.generation.app.entity.Privilege;
 
 import lombok.*;
 
@@ -18,6 +18,6 @@ public class UserDto {
 
 	private String email;
 
-	private Timestamp birthdate;
+	private Privilege privilege;
 
 }

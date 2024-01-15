@@ -1,9 +1,4 @@
 package org.generation.app.entity;
-
-import java.sql.Timestamp;
-
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -23,29 +18,30 @@ import lombok.*;
 @Getter
 @ToString
 @Entity
-@Table(name="usuarios")
+@Table(name="users")
 public class User {
 	
 	@Id // Indica que el atributo será la clave primaria de la entidad
 	// Indica como se generarán automáticamente las claves primarias
 	@GeneratedValue( strategy=GenerationType.IDENTITY)
 	private Long id;
-	@Column(name="nombre", nullable=false, length=70)
+	@Column(name="first_name", nullable=false, length=45)
 	private String firstName;
-	@Column(name="apellido", nullable=false, length=70)	
+	@Column(name="last_name", nullable=false, length=45)	
 	private String lastName;
-	@Column(name="email", nullable=false, length=100, unique=true)
+	@Column(name="email", nullable=false, length=35, unique=true)
 	private String email;
-	@Column(name="password", nullable=false, length=150)
+	@Column(name="password", nullable=false, length=45)
 	private String password;
-	@Column(name="activo")
-	private boolean active;
-	@Column(name="fecha_nacimiento")
-	private Timestamp birthdate;
+	@Column(name="address", nullable=true, length=450)
+	private String address;
+	@Column(name="phone", nullable=true, length=45)
+	private String phone;
+	
 	@ManyToOne
-	@JoinColumn(name="fk_role", nullable=false)
-	@JsonIgnoreProperties("description")
-	private Role role;
+	@JoinColumn(name="fk_privilege", nullable=false)
+//	@JsonIgnoreProperties("privilege")
+	private Privilege privilege;
 }
 
 /*
