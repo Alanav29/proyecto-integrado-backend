@@ -36,8 +36,8 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override // Se puede mejorar
 	public void deleteProduct(Long id) {
-		Product existingProduct = getProductById(id);
-		productRepository.delete(existingProduct);
+//		Product existingProduct = getProductById(id);
+//		productRepository.delete(existingProduct);
 	}
 
 	@Override // Se puede mejorar creo¿
