@@ -32,7 +32,7 @@ public class Product {
 	@Column(name="width", nullable=false)
 	private Double width;
 	@Column(name="height", nullable=false)
-	private Double heigth;
+	private Double height;
 	@Column(name="color", nullable=false, length=25)
 	private String color;
 	@Column(name="img", nullable=false, length=500, unique=true)
