@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - Sp3EcommerceApplicationTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>Sp3EcommerceApplicationTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/org.generation.app.html">org.generation.app</a> &gt; Sp3EcommerceApplicationTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">1.067s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div id="tabs">
+<ul class="tabLinks">
+<li>
+<a href="#tab0">Tests</a>
+</li>
+<li>
+<a href="#tab1">Standard output</a>
+</li>
+<li>
+<a href="#tab2">Standard error</a>
+</li>
+</ul>
+<div id="tab0" class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">contextLoads()</td>
+<td class="success">1.067s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div id="tab1" class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>Standard Commons Logging discovery in action with spring-jcl: please remove commons-logging.jar from classpath in order to avoid potential conflicts
+12:17:22.563 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [org.generation.app.Sp3EcommerceApplicationTests]: Sp3EcommerceApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+12:17:22.736 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration org.generation.app.Sp3EcommerceApplication for test class org.generation.app.Sp3EcommerceApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.1)
+
+2024-01-17T12:17:23.539-06:00  INFO 8352 --- [    Test worker] o.g.app.Sp3EcommerceApplicationTests     : Starting Sp3EcommerceApplicationTests using Java 21.0.1 with PID 8352 (started by Alan in C:\Users\Alan\Documents\Generation\proyecto-integrador-backend\proyecto-integrado-backend\sp3_ecommerce)
+2024-01-17T12:17:23.543-06:00  INFO 8352 --- [    Test worker] o.g.app.Sp3EcommerceApplicationTests     : The following 1 profile is active: &quot;${PROFILE}&quot;
+2024-01-17T12:17:24.876-06:00  INFO 8352 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-01-17T12:17:24.997-06:00  INFO 8352 --- [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 106 ms. Found 5 JPA repository interfaces.
+2024-01-17T12:17:25.842-06:00  INFO 8352 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-01-17T12:17:26.201-06:00  INFO 8352 --- [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:aeb87c4f-e44d-4f2f-8438-18fbc832ddc4 user=SA
+2024-01-17T12:17:26.203-06:00  INFO 8352 --- [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-01-17T12:17:26.312-06:00  INFO 8352 --- [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-01-17T12:17:26.417-06:00  INFO 8352 --- [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.1.Final
+2024-01-17T12:17:26.487-06:00  INFO 8352 --- [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-01-17T12:17:27.024-06:00  INFO 8352 --- [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-01-17T12:17:28.827-06:00  INFO 8352 --- [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-01-17T12:17:28.863-06:00 DEBUG 8352 --- [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists orders cascade 
+2024-01-17T12:17:28.870-06:00 DEBUG 8352 --- [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists orders_has_products cascade 
+2024-01-17T12:17:28.871-06:00 DEBUG 8352 --- [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists privileges cascade 
+2024-01-17T12:17:28.873-06:00 DEBUG 8352 --- [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists products cascade 
+2024-01-17T12:17:28.875-06:00 DEBUG 8352 --- [    Test worker] org.hibernate.SQL                        : 
+    drop table if exists users cascade 
+2024-01-17T12:17:28.885-06:00 DEBUG 8352 --- [    Test worker] org.hibernate.SQL                        : 
+    create table orders (
+        total float(53) not null,
+        fk_user_id bigint not null,
+        id_order bigint generated by default as identity,
+        order_date timestamp(6),
+        primary key (id_order)
+    )
+2024-01-17T12:17:28.899-06:00 DEBUG 8352 --- [    Test worker] org.hibernate.SQL                        : 
+    create table orders_has_products (
+        order_id_order bigint not null,
+        product_id_product bigint not null,
+        primary key (order_id_order, product_id_product)
+    )
+2024-01-17T12:17:28.903-06:00 DEBUG 8352 --- [    Test worker] org.hibernate.SQL                        : 
+    create table privileges (
+        id_privilege bigint generated by default as identity,
+        privilege varchar(45) not null,
+        primary key (id_privilege)
+    )
+2024-01-17T12:17:28.909-06:00 DEBUG 8352 --- [    Test worker] org.hibernate.SQL                        : 
+    create table products (
+        active boolean,
+        height float(53) not null,
+        price float(53) not null,
+        width float(53) not null,
+        id_product bigint generated by default as identity,
+        color varchar(25) not null,
+        title varchar(45) not null,
+        technique varchar(300) not null,
+        img varchar(500) not null unique,
+        primary key (id_product)
+    )
+2024-01-17T12:17:28.916-06:00 DEBUG 8352 --- [    Test worker] org.hibernate.SQL                        : 
+    create table users (
+        fk_privilege bigint not null,
+        id bigint generated by default as identity,
+        email varchar(35) not null unique,
+        first_name varchar(45) not null,
+        last_name varchar(45) not null,
+        password varchar(45) not null,
+        phone varchar(45),
+        primary key (id)
+    )
+2024-01-17T12:17:28.919-06:00 DEBUG 8352 --- [    Test worker] org.hibernate.SQL                        : 
+    alter table if exists orders 
+       add constraint FKh28k2xo20juv4t0x5h8kfuqym 
+       foreign key (fk_user_id) 
+       references users
+2024-01-17T12:17:28.944-06:00 DEBUG 8352 --- [    Test worker] org.hibernate.SQL                        : 
+    alter table if exists orders_has_products 
+       add constraint FKhkldx32lbyapswmq43in26r75 
+       foreign key (order_id_order) 
+       references orders
+2024-01-17T12:17:28.949-06:00 DEBUG 8352 --- [    Test worker] org.hibernate.SQL                        : 
+    alter table if exists orders_has_products 
+       add constraint FKjfyaxpmi25ggc0f8mchqceoqf 
+       foreign key (product_id_product) 
+       references products
+2024-01-17T12:17:28.953-06:00 DEBUG 8352 --- [    Test worker] org.hibernate.SQL                        : 
+    alter table if exists users 
+       add constraint FK722w3cktji3ne997kbr895bke 
+       foreign key (fk_privilege) 
+       references privileges
+2024-01-17T12:17:28.963-06:00  INFO 8352 --- [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-01-17T12:17:30.087-06:00  WARN 8352 --- [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-01-17T12:17:30.118-06:00  INFO 8352 --- [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-01-17T12:17:30.875-06:00  INFO 8352 --- [    Test worker] o.g.app.Sp3EcommerceApplicationTests     : Started Sp3EcommerceApplicationTests in 7.788 seconds (process running for 10.088)
+</pre>
+</span>
+</div>
+<div id="tab2" class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>WARNING: A Java agent has been loaded dynamically (C:\Users\Alan\.gradle\caches\modules-2\files-2.1\net.bytebuddy\byte-buddy-agent\1.14.10\90ed94ac044ea8953b224304c762316e91fd6b31\byte-buddy-agent-1.14.10.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="http://www.gradle.org">Gradle 8.5</a> at 17 ene 2024 12:17:32</p>
+</div>
+</div>
+</body>
+</html>

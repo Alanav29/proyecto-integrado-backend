@@ -23,12 +23,12 @@ public class Product {
 	@GeneratedValue( strategy=GenerationType.IDENTITY)
 	@Column(name="id_product")
 	private Long id;
-	@Column(name="title", nullable=false, length=45, unique=true)
+	@Column(name="title", nullable=false, length=45)
 	private String title;
 	@Column(name="price", nullable=false)
 	private Double price;
-	@Column(name="description",nullable=false, length=300)
-	private String description;
+	@Column(name="technique",nullable=false, length=300)
+	private String technique;
 	@Column(name="width", nullable=false)
 	private Double width;
 	@Column(name="height", nullable=false)
@@ -37,6 +37,8 @@ public class Product {
 	private String color;
 	@Column(name="img", nullable=false, length=500, unique=true)
 	private String img;
+	@Column(name="active")
+	private Boolean active;
 	
 	
 	

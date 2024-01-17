@@ -33,8 +33,6 @@ public class User {
 	private String email;
 	@Column(name="password", nullable=false, length=45)
 	private String password;
-	@Column(name="address", nullable=true, length=450)
-	private String address;
 	@Column(name="phone", nullable=true, length=45)
 	private String phone;
 	

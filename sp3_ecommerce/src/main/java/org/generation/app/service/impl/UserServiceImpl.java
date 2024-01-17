@@ -62,12 +62,12 @@ public class UserServiceImpl implements UserService {
 	@Override
 	public User updateUser(User user, Long id) {
 		User existingUser = getUserById(id);
-		existingUser.setFirstName( user.getFirstName());
-		existingUser.setLastName( user.getLastName());
-		existingUser.setAddress(user.getAddress());
-		existingUser.setPassword(user.getPassword());
-		existingUser.setPhone(user.getPhone());
-		existingUser.setPrivilege(user.getPrivilege());
+		if(user.getFirstName() != "" && user.getFirstName() != null)existingUser.setFirstName( user.getFirstName());
+		if(user.getLastName() != "" && user.getLastName() != null)existingUser.setLastName( user.getLastName());
+		if(user.getPassword() != "" && user.getPassword() != null)existingUser.setPassword(user.getPassword());
+		if(user.getPhone() != "" && user.getPhone() != null)existingUser.setPhone(user.getPhone());
+		Optional<Privilege> existingPrivilege = privilegeRepository.findByPrivilege(user.getPrivilege().getPrivilege());
+		if( existingPrivilege.isPresent()) existingUser.setPrivilege(existingPrivilege.get());
 		
 		// Si modificamos el email, se debe verificar que no exista.
 		return userRepository.save(existingUser);
@@ -79,6 +79,15 @@ public class UserServiceImpl implements UserService {
 		// userRepository.delete(existingUser);
 		existingUser.setPrivilege(new Privilege((long) 3, "inactive"));
 		userRepository.save(existingUser);
+	}
+
+	@Override
+	public User validateUser(User user) {
+		User existingUser = getUserByEmail(user.getEmail());
+		
+		if(existingUser.getPassword().equals( user.getPassword() ) ) return existingUser;
+		else throw new IllegalStateException("Invalid credentials");
+		
 	}
 
 }
