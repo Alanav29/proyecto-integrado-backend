@@ -55,7 +55,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<User> getAllUsers() {
-		List<User> users = (List<User>) userRepository.findAllByPrivilege(new Privilege((long) 1, "users"));
+		List<User> users = (List<User>) userRepository.findAll();
 		return users;
 	}
 

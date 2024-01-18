@@ -29,7 +29,7 @@ public class ProductServiceImpl implements ProductService {
 
 	@Override
 	public Product createProduct(Product product) {
-		
+		product.setId(null);
 		Optional<Product> productOptional = productRepository.findByTitle(product.getTitle());
 		if( productOptional.isPresent() && productOptional.get().getActive() == true) { 
 			throw new IllegalStateException("Product already exist ");
